@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NextLevel.unity
     guid: 2ac498a624856d8429acd2d65341f306
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
+    path: Assets/Scenes/GameOver.unity
     guid: fa40d6682e060b648b30fc2d73bb5ab9
   m_configObjects: {}
