@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Ball : MonoBehaviour
 {
@@ -42,5 +43,11 @@ public class Ball : MonoBehaviour
             Vector2 PaddlePosition = new Vector2(Paddle1.transform.position.x, Paddle1.transform.position.y);
             transform.position = PaddlePosition + PaddleToBallVector;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!bLaunched) return;
+        GetComponent<AudioSource>().Play();
     }
 }
