@@ -6,9 +6,12 @@ using UnityEngine.UIElements;
 
 public class Ball : MonoBehaviour
 {
+    [SerializeField] AudioClip[] Clips;
     [SerializeField] Paddle Paddle1;
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 2f;
+
+    AudioSource MySource;
 
     //State
     Vector2 PaddleToBallVector;
@@ -18,6 +21,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         PaddleToBallVector = transform.position - Paddle1.transform.position;
+        MySource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +52,8 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!bLaunched) return;
-        GetComponent<AudioSource>().Play();
+        AudioClip clip = Clips[UnityEngine.Random.Range(0, Clips.Length)];
+        //AudioSource.PlayClipAtPoint(Clips[RandomNum], transform.position);
+        MySource.PlayOneShot(clip);
     }
 }
