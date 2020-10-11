@@ -143,6 +143,7 @@ MonoBehaviour:
   Paddle1: {fileID: 0}
   xPush: 2
   yPush: 20
+  LevelObject: {fileID: 0}
 --- !u!82 &213972666
 AudioSource:
   m_ObjectHideFlags: 0
