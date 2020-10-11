@@ -52,8 +52,7 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!bLaunched) return;
-        AudioClip clip = Clips[UnityEngine.Random.Range(0, Clips.Length)];
-        //AudioSource.PlayClipAtPoint(Clips[RandomNum], transform.position);
+        AudioClip clip = Clips[UnityEngine.Random.Range(0, Clips.Length)];    
         MySource.PlayOneShot(clip);
     }
 }
