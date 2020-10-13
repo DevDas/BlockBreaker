@@ -13,6 +13,20 @@ public class GameState : MonoBehaviour
 
     TextMeshProUGUI ScoreText;
 
+    private void Awake()
+    {
+        int GSCount = FindObjectsOfType<GameState>().Length;
+        if (GSCount > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
         ScoreText = FindObjectOfType<TextMeshProUGUI>();
