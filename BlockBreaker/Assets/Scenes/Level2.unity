@@ -1011,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 5168478066669899442, guid: 57b174e0bc22f044ba9a47bc9ad45938,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 5168478066669899442, guid: 57b174e0bc22f044ba9a47bc9ad45938,
         type: 3}
@@ -1722,7 +1722,7 @@ PrefabInstance:
     - target: {fileID: 2940663993331239786, guid: b59b296b082ea524f90d547eb3cddc4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.58
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2940663993331239786, guid: b59b296b082ea524f90d547eb3cddc4f,
         type: 3}
@@ -1779,11 +1779,6 @@ PrefabInstance:
       propertyPath: Paddle1
       value: 
       objectReference: {fileID: 2259034}
-    - target: {fileID: 2940663993331239799, guid: b59b296b082ea524f90d547eb3cddc4f,
-        type: 3}
-      propertyPath: LevelObject
-      value: 
-      objectReference: {fileID: 343957191}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59b296b082ea524f90d547eb3cddc4f, type: 3}
 --- !u!1001 &1735472227

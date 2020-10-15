@@ -136,5 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BreakSound: {fileID: 8300000, guid: 8a7525bedb6120b4691518431e466a05, type: 3}
-  LevelObject: {fileID: 0}
-  sceneLoader: {fileID: 0}
+  BlockVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}

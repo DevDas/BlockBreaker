@@ -10,11 +10,19 @@ public class Block : MonoBehaviour
     Level LevelObject;
     GameState GS;
 
+    [SerializeField] GameObject BlockVFX;
+
     private void Start()
     {
         LevelObject = FindObjectOfType<Level>();
         LevelObject.CountBreakableBlocks();
         GS = FindObjectOfType<GameState>();
+    }
+
+    private void TriggerVFX()
+    {
+        GameObject Spark = Instantiate(BlockVFX, transform.position, transform.rotation);
+        Destroy(Spark, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,6 +31,8 @@ public class Block : MonoBehaviour
 
         LevelObject.BlockDestroyed();
         GS.AddToScore();
+
+        TriggerVFX();
 
         Destroy(gameObject);
     }
