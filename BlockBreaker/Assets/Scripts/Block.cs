@@ -11,11 +11,21 @@ public class Block : MonoBehaviour
     GameState GS;
 
     [SerializeField] GameObject BlockVFX;
+    [SerializeField] int MaxHits;
+    [SerializeField] int TimesHit;
+
+    [SerializeField] Sprite Broke1;
+    [SerializeField] Sprite Broke2;
 
     private void Start()
     {
         LevelObject = FindObjectOfType<Level>();
-        LevelObject.CountBreakableBlocks();
+
+        if (tag == "Breakable")
+        {
+            LevelObject.CountBreakableBlocks();
+        }
+
         GS = FindObjectOfType<GameState>();
     }
 
@@ -29,11 +39,29 @@ public class Block : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(BreakSound, Camera.main.transform.position);
 
-        LevelObject.BlockDestroyed();
+        if (tag == "UnBreakable") return;
+
+        TimesHit++;
+
+        if (TimesHit >= 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = Broke1;
+        }
+
+        if (TimesHit >= 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = Broke2;
+        }
+
+        if (TimesHit >= MaxHits)
+        {
+            LevelObject.BlockDestroyed();
+            
+            TriggerVFX();
+
+            Destroy(gameObject);
+        }
+
         GS.AddToScore();
-
-        TriggerVFX();
-
-        Destroy(gameObject);
     }
 }
