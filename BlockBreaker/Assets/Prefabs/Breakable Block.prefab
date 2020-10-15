@@ -139,5 +139,6 @@ MonoBehaviour:
   BlockVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
   MaxHits: 3
   TimesHit: 0
-  Broke1: {fileID: 21300000, guid: 8d3c4081caf24f745ae14569498f9458, type: 3}
-  Broke2: {fileID: 21300000, guid: 61b53ac3b7a52824cbeb18663a987e2f, type: 3}
+  BrokeSprites:
+  - {fileID: 21300000, guid: 8d3c4081caf24f745ae14569498f9458, type: 3}
+  - {fileID: 21300000, guid: 61b53ac3b7a52824cbeb18663a987e2f, type: 3}

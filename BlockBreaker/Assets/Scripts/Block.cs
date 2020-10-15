@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -14,8 +15,7 @@ public class Block : MonoBehaviour
     [SerializeField] int MaxHits;
     [SerializeField] int TimesHit;
 
-    [SerializeField] Sprite Broke1;
-    [SerializeField] Sprite Broke2;
+    [SerializeField] Sprite[] BrokeSprites;
 
     private void Start()
     {
@@ -43,16 +43,6 @@ public class Block : MonoBehaviour
 
         TimesHit++;
 
-        if (TimesHit >= 1)
-        {
-            GetComponent<SpriteRenderer>().sprite = Broke1;
-        }
-
-        if (TimesHit >= 2)
-        {
-            GetComponent<SpriteRenderer>().sprite = Broke2;
-        }
-
         if (TimesHit >= MaxHits)
         {
             LevelObject.BlockDestroyed();
@@ -61,7 +51,16 @@ public class Block : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else
+        {
+            ShowNextHitSprites();
+        }
 
         GS.AddToScore();
+    }
+
+    private void ShowNextHitSprites()
+    {       
+        GetComponent<SpriteRenderer>().sprite = BrokeSprites[TimesHit-1];
     }
 }
