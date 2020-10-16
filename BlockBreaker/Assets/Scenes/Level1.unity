@@ -577,11 +577,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764044146}
     m_Modifications:
-    - target: {fileID: 7524501167224268225, guid: 7d2a2de4b80c0e94bbba02f0bc3b286c,
-        type: 3}
-      propertyPath: BrokeSprites.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7524501167224268253, guid: 7d2a2de4b80c0e94bbba02f0bc3b286c,
         type: 3}
       propertyPath: m_Name
