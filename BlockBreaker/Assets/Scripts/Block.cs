@@ -12,7 +12,6 @@ public class Block : MonoBehaviour
     GameState GS;
 
     [SerializeField] GameObject BlockVFX;
-    [SerializeField] int MaxHits;
     [SerializeField] int TimesHit;
 
     [SerializeField] Sprite[] BrokeSprites;
@@ -37,6 +36,8 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        int MaxHits = BrokeSprites.Length + 1;
+
         AudioSource.PlayClipAtPoint(BreakSound, Camera.main.transform.position);
 
         if (tag == "UnBreakable") return;
@@ -60,7 +61,9 @@ public class Block : MonoBehaviour
     }
 
     private void ShowNextHitSprites()
-    {       
-        GetComponent<SpriteRenderer>().sprite = BrokeSprites[TimesHit-1];
+    {
+        int BrokeSpriteIndex = TimesHit - 1;
+        if (BrokeSprites[BrokeSpriteIndex] == null) return;
+        GetComponent<SpriteRenderer>().sprite = BrokeSprites[BrokeSpriteIndex];
     }
 }
